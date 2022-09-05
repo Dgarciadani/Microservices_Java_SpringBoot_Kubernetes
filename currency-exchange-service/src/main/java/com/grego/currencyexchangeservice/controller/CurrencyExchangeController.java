@@ -28,8 +28,17 @@ public class CurrencyExchangeController {
         //this is for log the id of the request
         logger.info("retrieveExchangeValue called with {} to {}", from, to);
         CurrencyExchange currencyExchange = currencyExchangeRepository.findByFromAndTo(from, to);
+
+
+
         String port = environment.getProperty("local.server.port");
-        currencyExchange.setEnvironment(port);
+
+        //KUBERNETES
+        String host = environment.getProperty("HOSTNAME");
+        String version = "v11";
+        currencyExchange.setEnvironment(host + " " + port + " " + version);
+
+
         return currencyExchange;
     }
 
