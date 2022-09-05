@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.grego</groupId>
 	<artifactId>currency-conversion-service</artifactId>
-	<version>0.0.11-SNAPSHOT</version>
+	<version>0.0.12-SNAPSHOT</version>
 	<name>currency-conversion-service-kubernetes</name>
 	<description>project to show te capabilities of microservices </description>
 	<properties>
@@ -90,7 +90,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>gregogc/mmv2-${project.artifactId}:${project.version}</name>
+						<name>gregogc/mmv2k8s-${project.artifactId}:${project.version}</name>
 					</image>
 					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
 					<excludes>
