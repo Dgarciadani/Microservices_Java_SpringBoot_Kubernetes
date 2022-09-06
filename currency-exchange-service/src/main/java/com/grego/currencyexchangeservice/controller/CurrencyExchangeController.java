@@ -35,7 +35,7 @@ public class CurrencyExchangeController {
 
         //KUBERNETES
         String host = environment.getProperty("HOSTNAME");
-        String version = "v11";
+        String version = "v13";
         currencyExchange.setEnvironment(host + " " + port + " " + version);
 
 

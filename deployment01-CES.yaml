@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
         #wew can get more images and in consequence more containers
-        - image: gregogc/mmv2k8s-currency-exchange-service:0.0.12-SNAPSHOT
+        - image: gregogc/mmv2k8s-currency-exchange-service:0.0.13-SNAPSHOT
           imagePullPolicy: IfNotPresent #We can change this to Always to force a pull
           name: mmv2k8s-currency-exchange-service
           resources:

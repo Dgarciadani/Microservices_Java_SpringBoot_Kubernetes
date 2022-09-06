@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.grego</groupId>
     <artifactId>currency-exchange-service</artifactId>
-    <version>0.0.12-SNAPSHOT</version>
+    <version>0.0.13-SNAPSHOT</version>
     <name>currency-exchange-service-kubernetes</name>
     <description>project to show te capabilities of microservices</description>
     <properties>
