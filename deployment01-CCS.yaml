@@ -28,9 +28,14 @@ spec:
         - image: gregogc/mmv2k8s-currency-conversion-service:0.0.13-SNAPSHOT
           imagePullPolicy: IfNotPresent #We can change this to Always to force a pull
           name: mmv2k8s-currency-conversion-service
-          env:
-            - name: CURRENCY_EXCHANGE_URI
-              value: http://currency-exchange       
+          #We add configmap as a volume
+          envFrom:
+            - configMapRef:
+                name: currency-conversion
+          # We will use configmap to get the URI
+          # env:
+          #   - name: CURRENCY_EXCHANGE_URI
+          #     value: http://currency-exchange       
           resources:
             limits:
               cpu: 500m
@@ -70,3 +75,11 @@ spec:
     app: currency-conversion
   sessionAffinity: None
   type: LoadBalancer
+---
+apiVersion: v1
+data:
+  CURRENCY_EXCHANGE_URI: http://currency-exchange
+kind: ConfigMap
+metadata:
+  name: currency-conversion
+  namespace: default
