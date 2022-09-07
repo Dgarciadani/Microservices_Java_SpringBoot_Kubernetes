@@ -28,6 +28,7 @@ spec:
         - image: gregogc/mmv2k8s-currency-exchange-service:0.0.13-SNAPSHOT
           imagePullPolicy: IfNotPresent #We can change this to Always to force a pull
           name: mmv2k8s-currency-exchange-service
+          #It will connect with actuator/health/liveness
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
